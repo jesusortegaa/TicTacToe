@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="8jE-ZW-On9">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
@@ -11,7 +11,7 @@
         <!--Item-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="TicTacToe" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalTransitionStyle="crossDissolve" modalPresentationStyle="fullScreen" id="BYZ-38-t0r" customClass="ViewController" customModule="TicTacToe" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -222,10 +222,10 @@
             </objects>
             <point key="canvasLocation" x="1903.0534351145038" y="-27.464788732394368"/>
         </scene>
-        <!--Start Controller.swift-->
+        <!--Start Controller-->
         <scene sceneID="bwX-MA-jjL">
             <objects>
-                <viewController id="ghO-ij-Wmc" customClass="StartController.swift" sceneMemberID="viewController">
+                <viewController id="ghO-ij-Wmc" customClass="StartController" customModule="TicTacToe" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="6RV-Ss-lZO">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -244,6 +244,9 @@
                                 <buttonConfiguration key="configuration" style="filled" title="Play">
                                     <fontDescription key="titleFontDescription" type="system" pointSize="80"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="startGame:" destination="ghO-ij-Wmc" eventType="touchUpInside" id="cQ3-HI-9r5"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="NSf-B8-eP2"/>
@@ -251,7 +254,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="sZc-GI-SMk"/>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="show" id="wSe-xV-mew"/>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="StartToGame" id="wSe-xV-mew"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qqB-LE-OKQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

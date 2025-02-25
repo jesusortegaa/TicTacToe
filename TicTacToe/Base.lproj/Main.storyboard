@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Item-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="TicTacToe" customModuleProvider="target" sceneMemberID="viewController">
@@ -163,31 +164,46 @@
                                 </constraints>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tic Tac Toe" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9zd-lB-URp">
-                                <rect key="frame" x="90.666666666666686" y="116" width="212" height="54"/>
+                                <rect key="frame" x="90.666666666666686" y="160" width="212" height="54"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="45"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Its 🅾️ Turn" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i8S-TO-iFU">
-                                <rect key="frame" x="87" y="698" width="219" height="60"/>
+                                <rect key="frame" x="87" y="628" width="219" height="60"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="50"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ROI-dv-xsj">
+                                <rect key="frame" x="135.66666666666666" y="716" width="121.66666666666666" height="62"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="Reset"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Reset">
+                                    <fontDescription key="titleFontDescription" type="system" pointSize="40"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="reset:" destination="BYZ-38-t0r" eventType="touchUpInside" id="GZN-55-e6k"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="9zd-lB-URp" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="M2q-SU-uzF"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="ROI-dv-xsj" secondAttribute="bottom" constant="40" id="TNt-XD-4VT"/>
+                            <constraint firstItem="ROI-dv-xsj" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Wzn-zd-YXo"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="9zd-lB-URp" secondAttribute="trailing" id="cBY-pf-aDw"/>
                             <constraint firstItem="9zd-lB-URp" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="hs7-6h-6lv"/>
                             <constraint firstItem="i8S-TO-iFU" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="p77-TZ-h7X"/>
                             <constraint firstItem="ERs-sb-Slc" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="pbR-pj-D1C"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="i8S-TO-iFU" secondAttribute="bottom" constant="60" id="sVN-qq-qcc"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="i8S-TO-iFU" secondAttribute="bottom" constant="130" id="sKh-9e-yYI"/>
                             <constraint firstItem="9zd-lB-URp" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="57" id="wZj-z6-gRU"/>
                             <constraint firstItem="ERs-sb-Slc" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="z8B-hR-mTg"/>
                         </constraints>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="zBo-eD-poo"/>
+                    <navigationItem key="navigationItem" id="eVW-t4-sso"/>
                     <connections>
                         <outlet property="a1" destination="OAI-0L-TGH" id="h2s-Jf-dZY"/>
                         <outlet property="a2" destination="Fb0-ds-Ngu" id="oJp-Fo-mpY"/>
@@ -198,12 +214,73 @@
                         <outlet property="c1" destination="rQa-hU-qPZ" id="hx7-fu-Sx4"/>
                         <outlet property="c2" destination="gO7-nI-UVY" id="GcD-8m-2h0"/>
                         <outlet property="c3" destination="Drk-S5-JX1" id="iic-4e-3oU"/>
+                        <outlet property="reset" destination="ROI-dv-xsj" id="K04-qp-ySl"/>
                         <outlet property="turnLabel" destination="i8S-TO-iFU" id="5UR-9B-tQv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="49.618320610687022" y="-27.464788732394368"/>
+            <point key="canvasLocation" x="1903.0534351145038" y="-27.464788732394368"/>
+        </scene>
+        <!--Start Controller.swift-->
+        <scene sceneID="bwX-MA-jjL">
+            <objects>
+                <viewController id="ghO-ij-Wmc" customClass="StartController.swift" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="6RV-Ss-lZO">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Tic Tac Toe" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bgR-Q2-Fpp">
+                                <rect key="frame" x="90" y="275" width="212" height="54"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="45"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gjh-ja-UkB">
+                                <rect key="frame" x="70" y="371" width="253" height="110"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Play">
+                                    <fontDescription key="titleFontDescription" type="system" pointSize="80"/>
+                                </buttonConfiguration>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="NSf-B8-eP2"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="sZc-GI-SMk"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="show" id="wSe-xV-mew"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qqB-LE-OKQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1002.2900763358779" y="-27.464788732394368"/>
+        </scene>
+        <!--Item-->
+        <scene sceneID="y6J-5v-Tde">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="8jE-ZW-On9" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="aZi-bJ-cxd"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="VTp-0G-6Pk">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="ghO-ij-Wmc" kind="relationship" relationship="rootViewController" id="rj8-UQ-tg3"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="efq-5g-7VB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="75.572519083969468" y="-27.464788732394368"/>
         </scene>
     </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>

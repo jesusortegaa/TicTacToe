@@ -35,6 +35,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var c2: UIButton!
     @IBOutlet weak var c3: UIButton!
     
+    @IBOutlet weak var reset: UIButton!
+    
     var board:[UIButton] = []
     
     override func viewDidLoad() {
@@ -57,17 +59,30 @@ class ViewController: UIViewController {
             return
         }
         if(checkFullBoard()){
-            turnLabel.text = "Draw!"
+            turnLabel.text = "Draw"
+            
             return
         }
         
         turn.toggle()
         turnLabel.text = "It's \(turn.rawValue) turn"
-        
     }
     
     func checkFullBoard() -> Bool{
-        return board.allSatisfy({$0.currentTitle != nil})
+        if(board.allSatisfy({$0.currentTitle != nil})){
+            for cell in board{
+                cell.backgroundColor = .gray
+            }
+            reset.isHidden = false
+            return true
+        }
+        return false
+    }
+    
+    func highLightWinner(withCombination combination: [Int]){
+        for index in combination{
+            board[index].backgroundColor = .systemYellow
+        }
     }
     
     func checkVictory(withLastPlayer player:String) -> Bool{
@@ -78,11 +93,23 @@ class ViewController: UIViewController {
         ]
         for combination in winningCombinations {
             if(combination.allSatisfy({board[$0].currentTitle == player})){
-                print(combination)
+                highLightWinner(withCombination: combination)
+                reset.isHidden = false
                 return true
             }
         }
         return false
+    }
+    
+    @IBAction func reset(_ sender: UIButton) {
+        for button in board {
+            button.setTitle(nil, for: .normal)
+            button.isEnabled = true
+            button.backgroundColor = .systemBackground // Restaurar color de fondo
+        }
+        reset.isHidden = true
+        turn = .Circle
+        turnLabel.text = "It's \(turn.rawValue) turn"
     }
     
     
